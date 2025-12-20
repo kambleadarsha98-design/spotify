@@ -5,6 +5,8 @@ const library = document.querySelector("#library");
 const full = document.querySelector(".full");
 const  box3 =  document.querySelector("#box3")
 const   screen =   document.querySelector("#fullcreen")
+const    pop  =  document.querySelector("#plusadd")
+const   msgalert =  document.querySelector(".alertmsg");
 let isExpanded = true; 
 
 // 1. Show/Hide toggle button on hover
@@ -35,8 +37,8 @@ function shrinkSidebar() {
     library.style.display = "none"; 
     full.style.display = "none"; 
     siderBtn.style.marginLeft = "2px"; // Fixed: camelCase
-siderBtn.style.visibility = "hidden"; 
-
+siderBtn.style.visibility = "visible"; 
+pop.style.display ="none"
 }
 
 function expandSidebar() {
@@ -45,8 +47,8 @@ function expandSidebar() {
     library.style.display = "block";
     full.style.display = "block";
     siderBtn.style.marginLeft = "1px"; // Fixed: camelCase
-    siderBtn.style.visibility = "visible";  
-    
+    siderBtn.style.visibility = "hidden";  
+    pop.style.display= "block"; 
     
 }
 let isExpandeed = true; 
@@ -78,5 +80,15 @@ function expandSidebarr() {
   siderBtn.style.display  =  " block" 
   screen.style.marginLeft  =  "1rem"; 
    library.style.marginLeft  =  "2rem"
-
+    
 }
+
+
+pop.addEventListener("click", () => {
+  // Fixed the typo: msgalert.stye -> msgalert.style
+  if (msgalert.style.display === "none" || msgalert.style.display === "") {
+    msgalert.style.display = "block";
+  } else {
+    msgalert.style.display = "none";
+  }
+});
