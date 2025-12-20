@@ -1,62 +1,82 @@
-const  frisTbox = document.querySelector(".fristbox"); 
+const firstBox = document.querySelector(".fristbox");
+const siderBtn = document.querySelector("#siderbtn");
+const secondBox = document.querySelector(".secondbox");
+const library = document.querySelector("#library");
+const full = document.querySelector(".full");
+const  box3 =  document.querySelector("#box3")
+const   screen =   document.querySelector("#fullcreen")
+let isExpanded = true; 
 
-const   sider =   document.querySelector("#siderbtn");
-
-frisTbox.addEventListener("mouseover",()=>{
- 
-    sider.style.visibility =   "visible";
-    
-    
-
+// 1. Show/Hide toggle button on hover
+firstBox.addEventListener("mouseover", () => {
+    siderBtn.style.visibility = "visible";
 });
 
-frisTbox.addEventListener("mouseleave",() =>{
-  
-    sider.style.visibility =  "hidden";
+firstBox.addEventListener("mouseleave", () => {
+    // Only hide if we aren't currently clicking/interacting
+    siderBtn.style.visibility = "hidden";
 });
 
-
-
-const  siderbtn =  document.querySelector("#siderbtn"); 
-const   secondbox =   document.querySelector(".secondbox"); 
-const   thirdbox =   document.querySelector(".thirdbox");
-const   library =  document.querySelector("#library");
-const  full  =   document.querySelector(".full")
-const  side =   document.querySelector(".side")
-let  boxwidth  =   true ; 
-
-
-if(siderbtn &&  frisTbox){
-    siderbtn.addEventListener("click",()=>{
-    if(boxwidth){
-        fristfunction();
-     }
-     else{
-        secondfunction();
-     }
-
-     boxwidth =  !boxwidth ;
-    })
+// 2. Toggle Logic
+if (siderBtn && firstBox) {
+    siderBtn.addEventListener("click", () => {
+        if (isExpanded) {
+            shrinkSidebar();
+        } else {
+            expandSidebar();
+        }
+        isExpanded = !isExpanded; // Flip the state
+    });
 }
 
-
-function fristfunction() {
-     
-    frisTbox.style.width  =  "10rem";
-    secondbox.style.width  =   "60rem";
+function shrinkSidebar() {
+    firstBox.style.width = "5rem";
+    secondBox.style.width = "55rem";
     library.style.display = "none"; 
-    full.style.display  =  "none"; 
-    siderbtn.style.marginleft   =  "50px"
-    sider .style .visibility ="visible";
+    full.style.display = "none"; 
+    siderBtn.style.marginLeft = "2px"; // Fixed: camelCase
+siderBtn.style.visibility = "hidden"; 
 
-  
 }
 
-function secondfunction(){
-    frisTbox.style.width =   "20rem";
-    secondbox.style.width  =   "40rem"
+function expandSidebar() {
+    firstBox.style.width = "20rem";
+    secondBox.style.width = "40rem";
     library.style.display = "block";
-    full.style.display  =   "block";
-    siderbtn.style.marginleft ="40px"
-        
+    full.style.display = "block";
+    siderBtn.style.marginLeft = "1px"; // Fixed: camelCase
+    siderBtn.style.visibility = "visible";  
+    
+    
+}
+let isExpandeed = true; 
+
+if (full && firstBox) {
+    full.addEventListener("click", () => {
+        if (isExpandeed) {
+            shrinkSidebarr();
+        } else {
+            expandSidebarr();
+        }
+        isExpandeed = !isExpandeed; // Flip the state
+    });
+}
+
+
+function shrinkSidebarr() {
+firstBox.style.width = "80rem"
+siderBtn.style.display = "none"
+screen.style.marginLeft  =  "20rem";    
+library.style.marginLeft  =  " 20rem"
+secondBox.style.display ="none"
+
+}
+
+function expandSidebarr() {
+    firstBox.style.width = "20rem";
+  secondBox.style.display ="block"
+  siderBtn.style.display  =  " block" 
+  screen.style.marginLeft  =  "1rem"; 
+   library.style.marginLeft  =  "2rem"
+
 }

@@ -159,9 +159,9 @@ p {
 
 
 .fristbox{
-    background-color:none;
+    background-color:grey;
     margin-left: 4px;
-    width: 20rem;
+    width: 15rem;
    border-radius: 5px;
    display: flex;
    justify-content:space-evenly;
@@ -185,11 +185,13 @@ p {
 }
 
 
-.thirdbox{
-    background-color: blueviolet;
+.box3
+{
+  background-color: blueviolet;
   width: 16.5rem;
   margin-left: 20px;
   border-radius: 5px;
+  
 }
 
 
@@ -200,11 +202,12 @@ svg{
 
 .side{
     visibility: hidden;
-    margin-left: 4px;
+    margin-left: 1px;
     margin-top: 1px;
+   
 }
 
 
-#halfscreen{
-    margin-left: 0px;
-}
+
+
+
